@@ -8,7 +8,9 @@
     <h2>Posts</h2>
     <% if @businesses.length > 0 %>
         <% @businesses.each do |b| %>
-            <p><%= b[:business_name] %> has a <%= b[:business_rating] %> rating.</p>
+            <%= link_to business_path(b), class: 'index_business' do %>
+                <p class='index_business'><%= b[:business_name] %> has a <%= b[:business_rating] %> rating.</p>
+            <% end %>
         <% end %>
     <% else %>
     <p>No businesses on record.</p>

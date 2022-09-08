@@ -1,5 +1,11 @@
 // Entry point for your Sass build
-$test-color: purple;
-.test {
-    color: $test-color;
+
+a.index_business {
+    color: initial;
+    text-decoration: none;
+    p {
+        width: fit-content;
+        border: solid 1px black;
+        padding: .2rem;
+    }
 }
