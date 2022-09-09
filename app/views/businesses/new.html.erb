@@ -1,2 +1,12 @@
-<h1>Businesses#new</h1>
-<p>Find me in app/views/businesses/new.html.erb</p>
+<h1>Add New Business</h1>
+<%= flash[:error] ? flash[:error] : nil %>
+<%= flash[:notice] ? flash[:notice] : nil %>
+<%= form_with model: @business do |f| %>
+    <%= f.label :business_name, 'Business Name: ' %>
+    <%= f.text_field :business_name %>
+    <%= f.label :business_city, 'Business City: ' %>
+    <%= f.text_field :business_city %>
+    <%= f.hidden_field :business_votes, value: 0 %>
+    <%= f.hidden_field :business_rating, value: 0 %>
+    <%= f.submit %>
+<% end %>

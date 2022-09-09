@@ -1,11 +1,15 @@
 <h1 class='test'>Gohan</h1>
 
+<%= flash[:error] ? flash[:error] : nil %>
+<%= flash[:notice] ? flash[:notice] : nil %>
+
 <% if !user_signed_in? %>
     <%= button_to 'Sign In', new_user_session_path %>
 <% else %>
     <%= button_to 'Log Out', destroy_user_session_path, method: :delete %>
     <p>Signed in as: <%= @user[:username] %></p>
     <h2>Posts</h2>
+    <%= button_to 'Add New Business', new_business_path, method: :get %>
     <% if @businesses.length > 0 %>
         <% @businesses.each do |b| %>
             <%= link_to business_path(b), class: 'index_business' do %>
