@@ -1,0 +1,23 @@
+<div id='logged_in_div'>
+        <h1>Gohan</h1>
+        <%= button_to 'Log Out', destroy_user_session_path, method: :delete %>
+        <p>Signed in as: <%= @user[:username] %></p>
+</div>
+<h2>Businesses</h2>
+<div id='businesses_div'>
+    <div id='businesses_list'>
+        <% if @businesses.length > 0 %>
+            <% @businesses.each do |b| %>
+                <%= link_to business_path(b), class: 'index_business' do %>
+                    <div class='index_business'>
+                        <h3><%= b[:business_name] %></h3>
+                        <p><%= b[:business_rating] %> rating</p>
+                    </div>
+                <% end %>
+            <% end %>
+        <% else %>
+        <p>No businesses on record.</p>
+        <% end %>
+    </div>
+    <%= button_to 'Add New Business', new_business_path, method: :get %>
+</div>
