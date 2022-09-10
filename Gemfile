@@ -73,3 +73,7 @@ end
 
 gem 'cssbundling-rails'
 gem "devise", "~> 4.8"
+
+gem 'omniauth-facebook'
+gem "omniauth-rails_csrf_protection"
+gem 'figaro'
