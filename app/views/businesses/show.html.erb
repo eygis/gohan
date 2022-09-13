@@ -4,3 +4,17 @@
 <p><%= @business[:business_rating] %> Rating</p>
 
 <%= button_to 'Leave a Review', new_review_path, method: :get, params: {id: @business[:id]} %>
+
+<h2>Reviews</h2>
+
+<% if @reviews.length > 0 %>
+    <% @reviews.each do |review| %>
+        <div class='review_div'>
+            <p>Reviewer: <%= review[:reviewer] %></p>
+            <p>Rating: <%= review[:rating] %></p>
+            <p>Review: <%= review[:review] %></p>
+        </div>
+    <% end %>
+<% else %>
+<p>No reviews yet.</p>
+<% end %>
