@@ -6,5 +6,6 @@
     <%= f.label :rating %>
     <%= f.select :rating, (1..10) %>
     <%= f.hidden_field :business_id, value: @business_id %>
+    <%= f.hidden_field :reviewer, value: current_user[:username] %>
     <%= f.submit %>
 <% end %> 
