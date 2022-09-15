@@ -1,7 +1,7 @@
 <%= link_to 'Return to Home Page', root_path %>
 <h1><%= @business[:business_name] %></h1>
 <p>City: <%= @business[:business_city] %></p>
-<p><%= @business[:business_rating] %> Rating</p>
+<p><%= @business[:business_rating] > 0 ? @business[:business_rating] : 'No' %> Rating</p>
 
 <%= button_to 'Leave a Review', new_review_path, method: :get, params: {id: @business[:id]} %>
 

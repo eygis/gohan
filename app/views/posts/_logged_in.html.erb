@@ -11,7 +11,7 @@
                 <%= link_to business_path(b), class: 'index_business' do %>
                     <div class='index_business'>
                         <h3><%= b[:business_name] %></h3>
-                        <p><%= b[:business_rating] %> rating</p>
+                        <p><%= b[:business_rating] > 0 ? b[:business_rating] : 'No' %> rating</p>
                     </div>
                 <% end %>
             <% end %>
