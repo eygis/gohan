@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
             Business.increment_counter(:business_votes, @business_id)
             redirect_to business_path(@business_id)
         else
-            flash[:error] = 'invalid'
+            flash[:error] = @review.errors.full_messages
             redirect_to business_path(@business_id)
         end
     end

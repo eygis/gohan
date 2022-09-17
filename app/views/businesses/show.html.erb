@@ -1,4 +1,13 @@
 <%= link_to 'Return to Home Page', root_path %>
+
+<% if flash[:error]%>
+    <div class='review_error'>
+    <% flash[:error].each do |error| %>
+        <li><%= error %></li>
+    <% end %>
+    </div>
+<% end %>
+
 <h1><%= @business[:business_name] %></h1>
 <p>City: <%= @business[:business_city] %></p>
 <p><%= @business[:business_rating] > 0 ? @business[:business_rating] : 'No' %> Rating</p>
