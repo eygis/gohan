@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[facebook]
 
+  has_many :reviews, class_name: "review", foreign_key: "user_id"
+
   def self.from_omniauth(auth)
     name_split = auth.info.name.split(" ")
     user = User.where(email: auth.info.email).first

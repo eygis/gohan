@@ -19,7 +19,7 @@
 <% if @reviews.length > 0 %>
     <% @reviews.each do |review| %>
         <div class='review_div'>
-            <p>Reviewer: <%= review[:reviewer] %></p>
+            <p>Reviewer: <%= review.user[:username] %></p>
             <p>Rating: <%= review[:rating] %></p>
             <p>Review: <%= review[:review] %></p>
         </div>
