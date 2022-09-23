@@ -5,7 +5,7 @@
 <% if @reviews.length > 0 %>
     <% @reviews.each do |review| %>
         <div class='review_div'>
-            <p>Business: <%= review.business[:business_name] %></p>
+            <p>Business Name: <%= review.business[:business_name] %></p>
             <p>Rating: <%= review[:rating] %></p>
             <p>Review: <%= review[:review] %></p>
         </div>
