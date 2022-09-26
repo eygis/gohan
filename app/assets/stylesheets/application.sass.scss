@@ -78,3 +78,13 @@ a.index_business {
     border: 2px solid black;
     color: red;
 }
+
+.user_link a {
+    text-decoration: none;
+    color: initial;
+}
+
+.user_link a:hover {
+    text-decoration: underline;
+    color: $main;
+}
