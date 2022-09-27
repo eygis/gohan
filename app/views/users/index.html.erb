@@ -1,6 +1,6 @@
 <%= link_to 'Return to Home Page', root_path %>
 
-<h1>User List</h1>
+<h1>User List:</h1>
 
 <% @users.each do |user| %>
     <p class='user_link'><%= link_to user[:username], user_path(user) %></p>
